@@ -8,11 +8,16 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
-  - name: button_1
-    properties: {text: button_1}
+  - name: spin_motors
+    properties: {text: Spin motors}
     type: Button
     layout_properties: {grid_position: 'TJPWMZ,KUYPZP'}
+    event_bindings: {click: spin_motors_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
+- name: label_1
+  properties: {text: Pro hackers}
+  type: Label
+  layout_properties: {slot: title}

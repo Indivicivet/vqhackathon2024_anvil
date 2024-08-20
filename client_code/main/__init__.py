@@ -1,7 +1,7 @@
 from ._anvil_designer import mainTemplate
 from anvil import *
 import anvil.server
-
+from anvil_extras import augment
 
 class main(mainTemplate):
   def __init__(self, **properties):
@@ -41,10 +41,10 @@ class main(mainTemplate):
     anvil.server.call("right_only", "r")
 
 
-
-
-def text_box_keydown(self, **event_args):
-  key_code = event_args.get('key_code')
-  key = event_args.get('key')
-  if key_code == 13:
-    print(key, key_code)
+  augment.set_event_handler(self, "keydown", self.keydown_handler)
+  
+  def keydown_handler(self, **event_args):
+    key_code = event_args.get('key_code')
+    key = event_args.get('key')
+    if key_code == 13:
+      print(key, key_code)

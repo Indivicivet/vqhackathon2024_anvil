@@ -45,15 +45,15 @@ class main(mainTemplate):
     if key == "w":
       anvil.server.call("both", "f")
     elif key == "s":
-      anvil.server.call("both", "b")
+      anvil.server.call("both", "r")
     elif key == "q":
       anvil.server.call("left_only", "f")
     elif key == "e":
       anvil.server.call("right_only", "f")
     elif key == "z":
-      anvil.server.call("left_only", "b")
+      anvil.server.call("left_only", "r")
     elif key == "c":
-      anvil.server.call("right_only", "b")
+      anvil.server.call("right_only", "r")
     elif key == "a":
       anvil.server.call("left_turn")
     elif key == "d":

@@ -20,27 +20,27 @@ class main(mainTemplate):
     
   def leftturn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call("left_turn")
+    anvil.server.call("left_turn", s=self.turn_sens_slider.value)
 
   def rightturn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call("right_turn")
+    anvil.server.call("right_turn", s=self.turn_sens_slider.value)
 
   def left_forward_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call("left_only", "f")
+    anvil.server.call("left_only", "f", s=self.turn_sens_slider.value)
 
   def right_forward_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call("right_only", "f")
+    anvil.server.call("right_only", "f", s=self.turn_sens_slider.value)
 
   def left_back_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call("left_only", "r")
+    anvil.server.call("left_only", "r", s=self.turn_sens_slider.value)
 
   def right_back_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call("right_only", "r")
+    anvil.server.call("right_only", "r", s=self.turn_sens_slider.value)
   
   def keydown_handler(self, **event_args):
     key_code = event_args.get('key_code')
@@ -51,19 +51,19 @@ class main(mainTemplate):
     elif key == "s":
       anvil.server.call("both", "r")
     elif key == "q":
-      anvil.server.call("left_only", "f")
+      anvil.server.call("left_only", "f", s=self.turn_sens_slider.value)
     elif key == "e":
-      anvil.server.call("right_only", "f")
+      anvil.server.call("right_only", "f", s=self.turn_sens_slider.value)
     elif key == "z":
-      anvil.server.call("left_only", "r")
+      anvil.server.call("left_only", "r", s=self.turn_sens_slider.value)
     elif key == "c":
-      anvil.server.call("right_only", "r")
+      anvil.server.call("right_only", "r", s=self.turn_sens_slider.value)
     elif key == "a":
-      anvil.server.call("left_turn")
+      anvil.server.call("left_turn", s=self.turn_sens_slider.value)
     elif key == "d":
-      anvil.server.call("right_turn")
+      anvil.server.call("right_turn", s=self.turn_sens_slider.value)
     elif key == "w":
-      anvil.server.call("run1s")
+      anvil.server.call("run1s", s=self.turn_sens_slider.value)
     else:
       ...
 

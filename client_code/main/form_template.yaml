@@ -62,7 +62,11 @@ components:
       properties: {}
       type: TextArea
       layout_properties: {row: KAGZWE, width_xs: 12, col_xs: 0}
-  - name: slider_1
+  - name: label_2
+    properties: {text: 'turn sens:'}
+    type: Label
+    layout_properties: {grid_position: 'IYZCRJ,EGAVQH'}
+  - name: turn_sens_slider
     properties: {}
     type: form:dep_vypnfo9z8xda:Slider
     layout_properties: {grid_position: 'ICSJGD,APRFJL'}

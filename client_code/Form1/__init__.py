@@ -16,8 +16,8 @@ class Form1(Form1Template):
 
   def leftturn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call("leftturn")
+    anvil.server.call("left_turn")
 
   def rightturn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call("rightturn")
+    anvil.server.call("right_turn")

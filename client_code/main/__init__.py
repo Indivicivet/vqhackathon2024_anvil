@@ -8,12 +8,21 @@ class main(mainTemplate):
     self.init_components(**properties)
   
     augment.set_event_handler(self.magic_text_box, "keydown", self.keydown_handler)
+
+  def spin_both(self, d):
+    anvil.server.call(
+      "both_split",
+      d=d,
+      t=1,
+      sl=self.spin_speed_slider.value * min(1, 1 - self.balance_slider.value),
+      sr=self.spin_speed_slider.value * min(1, 1 + self.balance_slider.value),
+    )
   
   def spin_motors_click(self, **event_args):
-    anvil.server.call("both", "f", t=1, s=self.spin_speed_slider.value)
+    self.spin_both("f")
 
   def spin_both_backward_click(self, **event_args):
-    anvil.server.call("both", "r", t=1, s=self.spin_speed_slider.value)
+    self.spin_both("r")
     
   def leftturn_click(self, **event_args):
     anvil.server.call("left_turn", s=self.turn_sens_slider.value)
@@ -38,9 +47,9 @@ class main(mainTemplate):
     key = event_args.get('key')
     print(key, key_code)
     if key == "w":
-      anvil.server.call("both", "f", s=self.spin_speed_slider.value)
+      self.spin_both("f")
     elif key == "s":
-      anvil.server.call("both", "r", s=self.spin_speed_slider.value)
+      self.spin_both("r")
     elif key == "q":
       anvil.server.call("left_only", "f", s=self.turn_sens_slider.value)
     elif key == "e":

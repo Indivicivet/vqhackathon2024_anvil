@@ -51,7 +51,12 @@ components:
   - name: grid_panel_2
     properties: {}
     type: GridPanel
-    layout_properties: {grid_position: 'EJYOJC,ETBFNC'}
+    layout_properties: {grid_position: 'LUYAQU,RWHINZ'}
+    components:
+    - name: magic_text_box
+      properties: {}
+      type: TextArea
+      layout_properties: {row: KAGZWE, width_xs: 12, col_xs: 0}
 - type: FlowPanel
   properties: {}
   name: navbar_links

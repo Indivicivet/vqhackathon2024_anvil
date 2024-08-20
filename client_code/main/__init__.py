@@ -14,6 +14,10 @@ class main(mainTemplate):
     """This method is called when the button is clicked"""
     anvil.server.call("both", "f", t=1)
 
+  def spin_both_backward_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call("both", "r", t=1)
+    
   def leftturn_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call("left_turn")
@@ -62,3 +66,4 @@ class main(mainTemplate):
       anvil.server.call("run1s")
     else:
       ...
+

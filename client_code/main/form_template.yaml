@@ -9,10 +9,15 @@ components:
   layout_properties: {slot: default}
   components:
   - name: spin_motors
-    properties: {text: Spin motors}
+    properties: {text: Spin motors forward}
     type: Button
     layout_properties: {grid_position: 'TJPWMZ,KUYPZP'}
     event_bindings: {click: spin_motors_click}
+  - name: spin_both_backward
+    properties: {text: Spin motors backward}
+    type: Button
+    layout_properties: {grid_position: 'TQZVWW,IKKCTP'}
+    event_bindings: {click: spin_both_backward_click}
   - name: grid_panel_1
     properties: {}
     type: GridPanel

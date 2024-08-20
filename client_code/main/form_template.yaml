@@ -28,6 +28,26 @@ components:
       type: Button
       layout_properties: {row: KIIXHF, width_xs: 6, col_xs: 0}
       event_bindings: {click: rightturn_click}
+    - name: left_forward
+      properties: {text: left fwd}
+      type: Button
+      layout_properties: {row: SQAALI, width_xs: 6, col_xs: 0}
+      event_bindings: {click: left_forward_click}
+    - name: right_forward
+      properties: {text: right fwd}
+      type: Button
+      layout_properties: {row: SQAALI, width_xs: 6, col_xs: 6}
+      event_bindings: {click: right_forward_click}
+    - name: left_back
+      properties: {text: left back}
+      type: Button
+      layout_properties: {row: YERKDZ, width_xs: 3, col_xs: 1}
+      event_bindings: {click: left_back_click}
+    - name: right_back
+      properties: {text: right back}
+      type: Button
+      layout_properties: {row: YERKDZ, width_xs: 3, col_xs: 7}
+      event_bindings: {click: right_back_click}
   - name: grid_panel_2
     properties: {}
     type: GridPanel

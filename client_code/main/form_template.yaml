@@ -27,9 +27,17 @@ components:
     type: Label
     layout_properties: {grid_position: 'UCUHXU,LWTLNN'}
   - name: spin_speed_slider
-    properties: {start: '100'}
+    properties: {start: '100', pips: true, pips_density: 10, pips_stepped: true}
     type: form:dep_vypnfo9z8xda:Slider
     layout_properties: {grid_position: 'TWMVDS,JVPQHB'}
+  - name: label_4
+    properties: {text: 'spin balance factor:'}
+    type: Label
+    layout_properties: {grid_position: 'OYYMMK,IPCBHS'}
+  - name: balance_slider
+    properties: {max: 0.5, min: -0.5, start: '0', pips: true, pips_density: 10}
+    type: form:dep_vypnfo9z8xda:Slider
+    layout_properties: {grid_position: 'ILJFFB,CFOAJJ'}
   - name: grid_panel_1
     properties: {}
     type: GridPanel
@@ -70,7 +78,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'IYZCRJ,EGAVQH'}
   - name: turn_sens_slider
-    properties: {}
+    properties: {pips: true}
     type: form:dep_vypnfo9z8xda:Slider
     layout_properties: {grid_position: 'ICSJGD,APRFJL'}
 - type: FlowPanel

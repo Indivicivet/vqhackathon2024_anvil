@@ -7,9 +7,9 @@ class main(mainTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
-    # Any code you write here will run before the form opens.
-
+  
+    augment.set_event_handler(self, "keydown", self.keydown_handler)
+    
   def spin_motors_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call("run1s")
@@ -39,12 +39,8 @@ class main(mainTemplate):
   def right_back_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call("right_only", "r")
-
-
-  augment.set_event_handler(self, "keydown", self.keydown_handler)
   
   def keydown_handler(self, **event_args):
     key_code = event_args.get('key_code')
     key = event_args.get('key')
-    if key_code == 13:
-      print(key, key_code)
+    print(key, key_code)

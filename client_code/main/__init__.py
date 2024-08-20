@@ -12,11 +12,11 @@ class main(mainTemplate):
     
   def spin_motors_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call("both", "f", t=1)
+    anvil.server.call("both", "f", t=1, s=self.spin_speed_slider.value)
 
   def spin_both_backward_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call("both", "r", t=1)
+    anvil.server.call("both", "r", t=1, s=self.spin_speed_slider.value)
     
   def leftturn_click(self, **event_args):
     """This method is called when the button is clicked"""

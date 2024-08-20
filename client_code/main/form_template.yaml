@@ -19,29 +19,29 @@ components:
     layout_properties: {grid_position: 'TUZRFB,ZDBKLF', full_width_row: false}
     components:
     - name: leftturn
-      properties: {text: leftturn}
+      properties: {text: left turn}
       type: Button
-      layout_properties: {row: KIIXHF, width_xs: 6, col_xs: 0}
+      layout_properties: {row: KIIXHF, width_xs: 3, col_xs: 2}
       event_bindings: {click: leftturn_click}
     - name: rightturn
-      properties: {text: rightturn}
+      properties: {text: right turn}
       type: Button
-      layout_properties: {row: KIIXHF, width_xs: 6, col_xs: 0}
+      layout_properties: {row: KIIXHF, width_xs: 3, col_xs: 7}
       event_bindings: {click: rightturn_click}
     - name: left_forward
       properties: {text: left fwd}
       type: Button
-      layout_properties: {row: SQAALI, width_xs: 6, col_xs: 0}
+      layout_properties: {row: SQAALI, width_xs: 3, col_xs: 2}
       event_bindings: {click: left_forward_click}
     - name: right_forward
       properties: {text: right fwd}
       type: Button
-      layout_properties: {row: SQAALI, width_xs: 6, col_xs: 6}
+      layout_properties: {row: SQAALI, width_xs: 3, col_xs: 7}
       event_bindings: {click: right_forward_click}
     - name: left_back
       properties: {text: left back}
       type: Button
-      layout_properties: {row: YERKDZ, width_xs: 3, col_xs: 1}
+      layout_properties: {row: YERKDZ, width_xs: 3, col_xs: 2}
       event_bindings: {click: left_back_click}
     - name: right_back
       properties: {text: right back}

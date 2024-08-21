@@ -22,22 +22,37 @@ components:
     type: Button
     layout_properties: {grid_position: 'TQZVWW,IKKCTP'}
     event_bindings: {click: spin_both_backward_click}
-  - name: label_3
-    properties: {text: 'spin speed:'}
-    type: Label
-    layout_properties: {grid_position: 'UCUHXU,LWTLNN'}
-  - name: spin_speed_slider
-    properties: {start: '100', pips: true, pips_density: 10, pips_stepped: true}
-    type: form:dep_vypnfo9z8xda:Slider
-    layout_properties: {grid_position: 'TWMVDS,JVPQHB'}
-  - name: label_4
-    properties: {text: 'spin balance factor:'}
-    type: Label
-    layout_properties: {grid_position: 'OYYMMK,IPCBHS'}
-  - name: balance_slider
-    properties: {max: 0.5, min: -0.5, start: '0', pips: true, pips_density: 10}
-    type: form:dep_vypnfo9z8xda:Slider
-    layout_properties: {grid_position: 'ILJFFB,CFOAJJ'}
+  - name: grid_panel_2
+    properties: {}
+    type: GridPanel
+    layout_properties: {grid_position: 'TKLTQM,YTJVPC'}
+    components:
+    - name: label_3
+      properties: {text: 'spin speed:'}
+      type: Label
+      layout_properties: {row: MAUKXC, width_xs: 2, col_xs: 0}
+    - name: spin_speed_showval
+      properties: {}
+      type: Label
+      layout_properties: {row: MAUKXC, width_xs: 3, col_xs: 4}
+    - name: spin_speed_slider
+      properties: {start: '100', pips: true, pips_density: 10, pips_stepped: true}
+      type: form:dep_vypnfo9z8xda:Slider
+      layout_properties: {row: BDSQZL, width_xs: 12, col_xs: 0}
+      event_bindings: {change: spin_speed_slider_change}
+    - name: label_4
+      properties: {text: 'spin balance factor:'}
+      type: Label
+      layout_properties: {row: YRSALZ, width_xs: 3, col_xs: 0}
+    - name: spin_factor_showval
+      properties: {align: center, bold: true}
+      type: Label
+      layout_properties: {row: YRSALZ, width_xs: 4, col_xs: 4}
+    - name: balance_slider
+      properties: {max: 0.5, min: -0.5, start: '0', pips: true, pips_density: 10}
+      type: form:dep_vypnfo9z8xda:Slider
+      layout_properties: {row: YRSALZ, width_xs: 12, col_xs: 0}
+      event_bindings: {change: balance_slider_change}
   - name: grid_panel_1
     properties: {}
     type: GridPanel

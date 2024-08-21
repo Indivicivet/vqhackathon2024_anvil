@@ -13,7 +13,7 @@ class main(mainTemplate):
     anvil.server.call(
       "both_split",
       d=d,
-      t=1,
+      t=self.spin_time_slider.value,
       sl=self.spin_speed_slider.value * min(1, 1 - self.balance_slider.value),
       sr=self.spin_speed_slider.value * min(1, 1 + self.balance_slider.value),
     )
@@ -77,5 +77,5 @@ class main(mainTemplate):
     self.turn_sens_showval.text = str(int(self.turn_sens_slider.value))
 
   def spin_time_slider_change(self, handle, **event_args):
-    self.spin_time
+    self.spin_time_showval.text = f"{self.spin_time_slider.value:.2f}"
 

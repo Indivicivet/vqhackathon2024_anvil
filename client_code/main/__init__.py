@@ -25,6 +25,13 @@ class main(mainTemplate):
         t=self.turn_time_slider.value,
         s=self.turn_sens_slider.value,
       )
+
+  def two_wheel_turn(self, func_name):
+    anvil.server.call(
+      func_name,
+      t=self.turn_time_slider.value,
+      s=self.turn_sens_slider.value,
+    )
   
   def spin_motors_click(self, **event_args):
     self.spin_both("f")
@@ -33,10 +40,10 @@ class main(mainTemplate):
     self.spin_both("r")
     
   def leftturn_click(self, **event_args):
-    self.turn_call("left_turn")
+    self.two_wheel_turn("left_turn")
 
   def rightturn_click(self, **event_args):
-    anvil.server.call("right_turn", s=self.turn_sens_slider.value)
+    self.two_wheel_turn("right_turn")
 
   def left_forward_click(self, **event_args):
     self.single_wheel_turn("left_only", "f")
@@ -67,11 +74,9 @@ class main(mainTemplate):
     elif key == "c":
       self.single_wheel_turn("right_only", "r")
     elif key == "a":
-      anvil.server.call("left_turn", s=self.turn_sens_slider.value)
+      self.two_wheel_turn("left_turn")
     elif key == "d":
-      anvil.server.call("right_turn", s=self.turn_sens_slider.value)
-    elif key == "w":
-      anvil.server.call("run1s", s=self.turn_sens_slider.value)
+      self.two_wheel_turn("right_turn")
     else:
       ...
 

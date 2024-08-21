@@ -17,6 +17,14 @@ class main(mainTemplate):
       sl=self.spin_speed_slider.value * min(1, 1 - self.balance_slider.value),
       sr=self.spin_speed_slider.value * min(1, 1 + self.balance_slider.value),
     )
+
+  def single_wheel_turn(self, func_name, d):
+      anvil.server.call(
+        func_name,
+        d,
+        t=self.turn_time_slider.value,
+        s=self.turn_sens_slider.value,
+      )
   
   def spin_motors_click(self, **event_args):
     self.spin_both("f")
@@ -25,22 +33,22 @@ class main(mainTemplate):
     self.spin_both("r")
     
   def leftturn_click(self, **event_args):
-    anvil.server.call("left_turn", s=self.turn_sens_slider.value)
+    self.turn_call("left_turn")
 
   def rightturn_click(self, **event_args):
     anvil.server.call("right_turn", s=self.turn_sens_slider.value)
 
   def left_forward_click(self, **event_args):
-    anvil.server.call("left_only", "f", s=self.turn_sens_slider.value)
+    self.single_wheel_turn("left_only", "f")
 
   def right_forward_click(self, **event_args):
-    anvil.server.call("right_only", "f", s=self.turn_sens_slider.value)
+    self.single_wheel_turn("right_only", "f")
 
   def left_back_click(self, **event_args):
-    anvil.server.call("left_only", "r", s=self.turn_sens_slider.value)
+    self.single_wheel_turn("left_only", "r")
 
   def right_back_click(self, **event_args):
-    anvil.server.call("right_only", "r", s=self.turn_sens_slider.value)
+    self.single_wheel_turn("right_only", "r")
   
   def keydown_handler(self, **event_args):
     key_code = event_args.get('key_code')
@@ -51,13 +59,13 @@ class main(mainTemplate):
     elif key == "s":
       self.spin_both("r")
     elif key == "q":
-      anvil.server.call("left_only", "f", s=self.turn_sens_slider.value)
+      self.single_wheel_turn("left_only", "f")
     elif key == "e":
-      anvil.server.call("right_only", "f", s=self.turn_sens_slider.value)
+      self.single_wheel_turn("right_only", "f")
     elif key == "z":
-      anvil.server.call("left_only", "r", s=self.turn_sens_slider.value)
+      self.single_wheel_turn("left_only", "r")
     elif key == "c":
-      anvil.server.call("right_only", "r", s=self.turn_sens_slider.value)
+      self.single_wheel_turn("right_only", "r")
     elif key == "a":
       anvil.server.call("left_turn", s=self.turn_sens_slider.value)
     elif key == "d":

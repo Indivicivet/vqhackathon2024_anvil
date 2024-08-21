@@ -67,3 +67,9 @@ class main(mainTemplate):
     else:
       ...
 
+  def balance_slider_change(self, handle, **event_args):
+    self.spin_factor_showval.text = f"{self.balance_slider.value:.2f}"
+
+  def spin_speed_slider_change(self, handle, **event_args):
+    self.spin_speed_showval.text = str(int(self.spin_speed_slider.value))
+

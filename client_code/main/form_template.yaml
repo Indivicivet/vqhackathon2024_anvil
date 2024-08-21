@@ -152,6 +152,6 @@ components:
   name: navbar_links
   layout_properties: {slot: nav-right}
 - name: label_1
-  properties: {text: Pro hackers}
+  properties: {text: Amari treats panel}
   type: Label
   layout_properties: {slot: title}

@@ -95,3 +95,11 @@ class main(mainTemplate):
   def turn_time_slider_change(self, handle, **event_args):
     self.turn_time_showval.text = f"{self.turn_time_slider.value:.2f}"
 
+  def button_o2j_click(self, **event_args):
+    anvil.server.call("ode_to_joy")
+
+  def button_lgt_click(self, **event_args):
+    anvil.server.call("lets_go_tune")
+
+  def button_watch_click(self, **event_args):
+    anvil.server.call("we_are_the_champions")

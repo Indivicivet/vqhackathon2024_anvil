@@ -73,3 +73,6 @@ class main(mainTemplate):
   def spin_speed_slider_change(self, handle, **event_args):
     self.spin_speed_showval.text = str(int(self.spin_speed_slider.value))
 
+  def turn_sens_slider_change(self, handle, **event_args):
+    self.turn_sens_showval.text = str(int(self.turn_sens_slider.value))
+

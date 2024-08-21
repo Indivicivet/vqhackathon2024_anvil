@@ -79,3 +79,6 @@ class main(mainTemplate):
   def spin_time_slider_change(self, handle, **event_args):
     self.spin_time_showval.text = f"{self.spin_time_slider.value:.2f}"
 
+  def turn_time_slider_change(self, handle, **event_args):
+    self.turn_time_showval.text = f"{self.turn_time_slider.value:.2f}"
+

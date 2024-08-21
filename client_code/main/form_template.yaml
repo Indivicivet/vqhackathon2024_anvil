@@ -102,7 +102,7 @@ components:
       layout_properties: {row: YERKDZ, width_xs: 3, col_xs: 7}
       event_bindings: {click: right_back_click}
     - name: label_2
-      properties: {text: 'turn sens:'}
+      properties: {text: 'turn sens (speed):'}
       type: Label
       layout_properties: {row: YHEXKS, width_xs: 3, col_xs: 0}
     - name: turn_sens_showval
@@ -114,6 +114,19 @@ components:
       type: form:dep_vypnfo9z8xda:Slider
       layout_properties: {row: GXNOVZ, width_xs: 12, col_xs: 0}
       event_bindings: {change: turn_sens_slider_change}
+    - name: label_6
+      properties: {text: 'turn time:'}
+      type: Label
+      layout_properties: {row: JUUOKA, width_xs: 3, col_xs: 0}
+    - name: turn_time_showval
+      properties: {bold: true, align: center, text: '0.1?'}
+      type: Label
+      layout_properties: {row: JUUOKA, width_xs: 4, col_xs: 4}
+    - name: turn_time_slider
+      properties: {max: 0.5, min: 0.01, start: '0.1', tooltips: true, pips: true, pips_density: 10}
+      type: form:dep_vypnfo9z8xda:Slider
+      layout_properties: {row: ZVKLBC, width_xs: 12, col_xs: 0}
+      event_bindings: {change: turn_time_slider_change}
 - type: FlowPanel
   properties: {}
   name: navbar_links

@@ -30,6 +30,10 @@ components:
     properties: {start: '100', pips: true, pips_density: 10, pips_stepped: true}
     type: form:dep_vypnfo9z8xda:Slider
     layout_properties: {grid_position: 'TWMVDS,JVPQHB'}
+  - name: grid_panel_2
+    properties: {}
+    type: GridPanel
+    layout_properties: {grid_position: 'TKLTQM,YTJVPC'}
   - name: label_4
     properties: {text: 'spin balance factor:'}
     type: Label

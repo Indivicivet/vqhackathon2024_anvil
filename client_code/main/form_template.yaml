@@ -12,21 +12,21 @@ components:
     properties: {}
     type: TextArea
     layout_properties: {grid_position: 'VZXKOR,JTELUY'}
-  - name: spin_motors
-    properties: {text: Spin motors forward}
-    type: Button
-    layout_properties: {grid_position: 'TJPWMZ,KUYPZP'}
-    event_bindings: {click: spin_motors_click}
-  - name: spin_both_backward
-    properties: {text: Spin motors backward}
-    type: Button
-    layout_properties: {grid_position: 'TQZVWW,IKKCTP'}
-    event_bindings: {click: spin_both_backward_click}
   - name: grid_panel_2
     properties: {}
     type: GridPanel
     layout_properties: {grid_position: 'TKLTQM,YTJVPC'}
     components:
+    - name: spin_motors
+      properties: {text: Spin motors forward}
+      type: Button
+      layout_properties: {row: XBECFZ, width_xs: 6, col_xs: 0}
+      event_bindings: {click: spin_motors_click}
+    - name: spin_both_backward
+      properties: {text: Spin motors backward}
+      type: Button
+      layout_properties: {row: XBECFZ, width_xs: 6, col_xs: 6}
+      event_bindings: {click: spin_both_backward_click}
     - name: label_3
       properties: {text: 'spin speed:'}
       type: Label
@@ -36,7 +36,7 @@ components:
       type: Label
       layout_properties: {row: MAUKXC, width_xs: 4, col_xs: 4}
     - name: spin_speed_slider
-      properties: {start: '100', pips: true, pips_density: 10, pips_stepped: true}
+      properties: {start: '100', pips: true, pips_density: 10, pips_stepped: true, tooltips: true}
       type: form:dep_vypnfo9z8xda:Slider
       layout_properties: {row: BDSQZL, width_xs: 12, col_xs: 0}
       event_bindings: {change: spin_speed_slider_change}
@@ -49,12 +49,25 @@ components:
       type: Label
       layout_properties: {row: YRSALZ, width_xs: 4, col_xs: 4}
     - name: balance_slider
-      properties: {max: 0.5, min: -0.5, start: '0', pips: true, pips_density: 10}
+      properties: {max: 0.5, min: -0.5, start: '0', pips: true, pips_density: 10, tooltips: true}
       type: form:dep_vypnfo9z8xda:Slider
       layout_properties: {row: YRSALZ, width_xs: 12, col_xs: 0}
       event_bindings: {change: balance_slider_change}
+    - name: label_5
+      properties: {text: 'spin time:'}
+      type: Label
+      layout_properties: {row: AXFVEC, width_xs: 3, col_xs: 0}
+    - name: spin_time_showval
+      properties: {bold: true, align: center, text: '0.5?'}
+      type: Label
+      layout_properties: {row: AXFVEC, width_xs: 4, col_xs: 4}
+    - name: spin_time_slider
+      properties: {max: 2, start: '0.5', tooltips: true, pips: true, pips_density: 4, pips_stepped: true, min: 0.05}
+      type: form:dep_vypnfo9z8xda:Slider
+      layout_properties: {row: JHSVIQ, width_xs: 12, col_xs: 0}
+      event_bindings: {change: spin_time_slider_change}
   - name: steering_gp
-    properties: {spacing_above: small, spacing_below: small}
+    properties: {spacing_above: small, spacing_below: none}
     type: GridPanel
     layout_properties: {grid_position: 'TUZRFB,ZDBKLF', full_width_row: false}
     components:
@@ -97,7 +110,7 @@ components:
       type: Label
       layout_properties: {row: YHEXKS, width_xs: 4, col_xs: 4}
     - name: turn_sens_slider
-      properties: {pips: true}
+      properties: {pips: true, tooltips: true}
       type: form:dep_vypnfo9z8xda:Slider
       layout_properties: {row: GXNOVZ, width_xs: 12, col_xs: 0}
       event_bindings: {change: turn_sens_slider_change}
